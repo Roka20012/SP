@@ -1,7 +1,8 @@
 import commands from "./tokens.json";
 
 let inputElement = document.getElementById("input"),
-    textareaElement = document.getElementById("textarea");
+    textareaElement = document.getElementById("textarea"),
+    textareaElement2 = document.getElementById("textarea2");
 const checkConstants = (element, index) => {
     let aboutElement = "";
 
@@ -39,15 +40,23 @@ const createFile = (text, name, type) => {
 };
 
 const searchCommands = (commands, code) => {
+    
     code = code.map(el => el.match(/\.?(\w+|\W)/gi));
+    for(let i = 0; i < code.length; i++) {
+        if(code[i] === null) {
+            code.splice(i, 1);
+            i--;
+        }
+    }
     if (code[code.length - 1] === null) {
         code.splice(code.length - 1, 1);
         code.push([""]);
     }
 
     let details = [];
+    console.log(code);
     code.forEach((el, i) => {
-        if (el.length > 1) details[i] = `Рядок: ${el.join("")}\n`;
+        details[i] = `Рядок: ${el.join("")}\n`;
         let j = 1;
         el.forEach(e => {
             if (commands[e.toUpperCase()]) {
@@ -64,15 +73,18 @@ const searchCommands = (commands, code) => {
     });
 
     details = details.join("\n");
+    textareaElement2.innerHTML = details;
     console.log(details);
     console.log(code);
+
     createFile(details, "myfile.txt", "text/plain");
 };
 
 inputElement.onchange = event => {
     let asmFile = event.target.files[0];
+    console.log(asmFile.name.split(".")[1]);
 
-    if (asmFile.type === "text/plain") {
+    if (asmFile.name.split(".")[1] === "asm" || asmFile.type === "text/plain") {
         let reader = new FileReader();
 
         reader.onloadend = event => {
