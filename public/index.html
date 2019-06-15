@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Course work</title>
+        <style>
+            body {
+                font-family: "Roboto", "Montserrat", sans-serif;
+                background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+            }
+            button,
+            input,
+            label {
+                border: none;
+                resize: none;
+                text-decoration: none;
+                outline: none;
+                display: inline-block;
+                width: 140px;
+                height: 45px;
+                line-height: 45px;
+                border-radius: 45px;
+                margin: 10px 20px;
+                font-family: "Montserrat", sans-serif;
+                font-size: 11px;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 3px;
+                font-weight: 600;
+                color: #524f4e;
+                background: white;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: 0.3s;
+            }
+            button:hover,
+            input:hover,
+            label:hover {
+                cursor: pointer;
+                background: #2ee59d;
+                box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+                color: white;
+                transform: translateY(-3px);
+            }
+            textarea {
+                resize: none;
+            }
+
+            #input {
+                opacity: 0;
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                z-index: -1;
+            }
+
+            textarea {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                padding: 0 20px;
+                margin-bottom: 10px;
+                background: #e9eff6;
+                /* line-height: 40px; */
+                border-width: 0;
+                border-radius: 2px;
+            }
+
+            textarea {
+                resize: none;
+            }
+
+            .wrapper {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                width: 100%;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h2,
+            h1 {
+                font-size: 32px;
+                margin-top: 70px;
+                text-align: center;
+                color: #11b57c;
+            }
+
+            h1 {
+                margin-top: 10px;
+                font-size: 50px;
+            }
+
+            .wrapper2 {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                width: 100%;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .wrapper2 div {
+                flex: 1 0 40%;
+                width: 50%;
+            }
+
+            .wrapper2 div textarea {
+                width: 92%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>COURSE WORK ASSEMBLY</h1>
+        <div class="gg"></div>
+        <div class="wrapper">
+            <label for="input">Upload</label>
+            <input id="input" type="file" value="" />
+            <a id="lex"><button>lexems.txt</button></a>
+            <a id="struct"><button>stucture.txt</button></a>
+            <a id="first"><button>firstPass.txt</button></a>
+            <a id="errors"><button>errors.txt</button></a>
+        </div>
+        <div class="wrapper2">
+            <div>
+                <h2>FILE</h2>
+                <textarea rows="50" cols="50" id="textarea"></textarea>
+            </div>
+            <div>
+                <h2>LEXEMS</h2>
+                <textarea id="textarea2" cols="50" rows="50"></textarea>
+            </div>
+            <div>
+                <h2>SENTENCE STRUCTURE</h2>
+                <textarea id="textarea3" cols="50" rows="50"></textarea>
+            </div>
+            <div>
+                <h2>FIRST PASS</h2>
+                <textarea id="textarea4" cols="50" rows="50"></textarea>
+            </div>
+        </div>
+    </body>
+</html>
